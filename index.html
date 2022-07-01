@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SmartKitPro Documentation</title>
+
+        <link rel="shortcut icon" href="favicon.png" />
+
+        <!-- Google Font -->
+        <!--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet"> -->
+
+        <!-- FontAwesome JS-->
+        <!--<script defer src="assets/fontawesome/js/all.min.js"></script>-->
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+
+        <!-- Theme CSS -->
+        <link id="theme-style" rel="stylesheet" href="assets/css/theme.css" />
+    </head>
+
+    <body class="docs-page">
+        <header class="header fixed-top">
+            <div class="branding docs-branding">
+                <div class="container-fluid position-relative py-2">
+                    <div class="docs-logo-wrapper">
+                        <button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <div class="site-logo">
+                            <a class="navbar-brand" href="index.html"><img class="logo-icon me-2" src="images/logo.svg" alt="logo" /></a>
+                        </div>
+                    </div>
+                    <!--//docs-logo-wrapper-->
+                    <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+                        <a href="https://wrteam.in/"> <img src="images/ic_launcher_round.png" alt="SmartKitPro" width="20%" height="20%" /></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="docs-wrapper">
+            <div id="docs-sidebar" class="docs-sidebar">
+                <div class="top-search-box d-lg-none p-3">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input" />
+                        <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <nav id="docs-nav" class="docs-nav navbar">
+                    <ul class="section-items list-unstyled nav flex-column pb-3">
+                        <li class="nav-item section-title">
+                            <a class="nav-link scrollto active" href="#section-1">
+                                <span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Introduction
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#setup">How to setup Flutter</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#setupios">Setup Project on MacOS</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#apk">Generate Release APK</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#iosbuild">How to Publish iOS App to App Store</a></li>
+                        <li class="nav-item section-title mt-3">
+                            <a class="nav-link scrollto" href="#section-2">
+                                <span class="theme-icon-holder me-2"><i class="fas fa-edit"></i></span>Design
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#dependency">How to implement design?</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#image">Change Image</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#splash">Change Splash Screen</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#loginanimation">Implement Login Animation</a></li>
+                        <li class="nav-item section-title mt-3">
+                            <a class="nav-link scrollto" href="#section-3">
+                                <span class="theme-icon-holder me-2"><i class="fas fa-server"></i></span>Firebase
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#create_fcm">Create Firebase Project</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#realtimedb">Realtime Database</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#emailLogin">Authentication using Email-Password</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#googleLogin">Authentication using Google</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#mobileLogin">Authentication using Mobile Number</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#facebookLogin">Authentication using Facebook</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#deeplinking">Firebase Dynamic Links</a></li>
+                        <li class="nav-item section-title mt-3">
+                            <a class="nav-link scrollto" href="#section-4">
+                                <span class="theme-icon-holder me-2"><i class="fab fa-google-drive"></i></span>Google Drive
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#googledrive">Google Drive Integration</a></li>
+                        <li class="nav-item section-title mt-3">
+                            <a class="nav-link scrollto" href="#section-5">
+                                <span class="theme-icon-holder me-2"><i class="fas fa-language"></i></span>Multi Language
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#language">Multi Language Setting</a></li>
+                        <li class="nav-item section-title mt-3">
+                            <a class="nav-link scrollto" href="#section-6">
+                                <span class="theme-icon-holder me-2"><i class="fas fa-adjust"></i></span>Theme
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#dynamictheme">Dynamic Theme</a></li>
+                        <li class="nav-item section-title mt-3">
+                            <a class="nav-link scrollto" href="#section-10">
+                                <span class="theme-icon-holder me-2"><i class="fas fa-adjust"></i></span>Import project
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#importproject">Import individual UI</a></li>
+                        <li class="nav-item section-title mt-3">
+                            <a class="nav-link scrollto" href="#section-7">
+                                <span class="theme-icon-holder me-2"><i class="fas fa-question-circle"></i></span>WRTeam
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#support">Need Support?</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#rating">Feedback</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#contactus">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <!--//docs-nav-->
+            </div>
+            <!--//docs-sidebar-->
+            <div class="docs-content">
+                <div class="container">
+                    <article class="docs-article" id="section-1">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">
+                                <img src="images/wrteam.png" alt="SmartKitPro" /> <span class="docs-time"><a href="https://wrteam.in/" target="_blank">wrteam.in</a></span>
+                            </h1>
+
+                            <section class="docs-intro">
+                                <p>
+                                    WRTeam is a company built with the ideology of customers first. We are a team of enthusiastic individuals, with foresight for innovation and a passion for solving everyday problems using the latest
+                                    technology.
+                                </p>
+                            </section>
+                            <section class="docs-intro">
+                                <p>
+                                    We trust in your ideas and want to help you bring them to life, so you can focus on your long term vision while we do all the hard work. As a service providing company, we understand your needs and strive
+                                    hard to provide you with the best possible quality of service whether it is the development of your app, logo design or branding, or UI/UX improvements.
+                                </p>
+                            </section>
+                            <section class="docs-intro">
+                                <p>
+                                    To achieve the above, we have handpicked our people and recruited a team of multi-talented individuals, each of whom adds a unique skill to our team of service providers. We ensure quality by imparting
+                                    strict testing of all our products, listening to the customer complaints, and solving their problems on a priority basis.
+                                </p>
+                            </section>
+                        </header>
+                        <section class="docs-section" id="setup">
+                            <h2 class="section-heading">How to Setup Flutter in Android Studio</h2>
+                            <ol>
+                                <li>Download Lastest Flutter SDK from below link.in that click on flutter_window_xxx.zip button.</li>
+
+                                <li><a href="https://flutter.dev/docs/get-started/install/windows">Flutter sdk Here</a></li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/setup.png" alt="SmartKitPro" />
+
+                                <br />
+                                <br />
+                                <li>Extract the zip file and copy flutter folder into your desired installation location for the Flutter SDK (eg. C:\src\flutter; do not install Flutter in a directory like C:\Program Files\).</li>
+                                <br />
+                                <li>Inside Flutter folder find flutter_console.bat. Start it by double-clicking.</li>
+                                <br />
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/setup2.png" alt="SmartKitPro" />
+                                <br />
+                                <li>Now set your enviournment variable</li>
+                                <li>From the Start search bar in , type &apos;env&apos; and select Edit environment variables for your account</li>
+
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/path.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+
+                                <li>Under User variables check if there is an entry called Path:</li>
+                                <li>Click on Edit.new Dialog open from it click on new and copy full path to flutter\bin as its value</li>
+                                <li>Now Restart your pc for changes to take effect</li>
+                                <img class="figure-img img-fluid shadow rounded" src="images/path2.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Now check everything is ok or not</li>
+                                <li>open cmd and do following shown in below picture</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/check.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Now open Android Studio and create new flutter project then select your flutter sdk file to the location where we have downloaded earlier and that's it</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/flutter.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                            </ol>
+                        </section>
+                        <!--//section-->
+
+                        <section class="docs-section" id="setupios">
+                            <h2 class="section-heading">Setup Project on MacOS</h2>
+                            <ol>
+                                <li>Open Project folder in Android Studio. Go to Preferences > Language & Frameworks > Flutter and Set Flutter SDK Path & Enable Dart support for Project and Apply and OK.</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/open-preferences-android studio.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/flutter-path-set.png" alt="SmartKitPro" />
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/dart-enable-pathSet.png" alt="SmartKitPro" />
+
+                                <br />
+                                <br />
+                                <li>Next: Go to Flutter > Clean Flutter > Flutter Pub Get.</li>
+                                <br />
+                                <li>Go to Terminal > write command -> cd iOS and press enter key and then write command pod install. After finishing pods installation.</li>
+                                <br />
+                                <li>Go to Flutter > Open iOS module in Xcode</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/flutter-clean-pub get-Open in Xcode.png" alt="SmartKitPro" />
+                                <br />
+
+                                <li>Select Project > Target > Check For Display Name and Bundle Identifier in General Tab.</li>
+                                <img class="figure-img img-fluid shadow rounded" src="images/xcode-name&BundleID.png" alt="SmartKitPro" />
+                                <br />
+                                <li>Now go to Signing & Capabilities >Signing > Team - Add Your Team / Apple Developer Account here.</li>
+                                <img class="figure-img img-fluid shadow rounded" src="images/xcode-capabilities.png" alt="SmartKitPro" />
+                                <br />
+
+                                <li>Add Following Capabilities according to Requirement of your Project & Respected Packages From Pubspec.yaml file.<br /></li>
+                                <ul>
+                                    <li>Sign in with Apple</li>
+                                    <br />
+                                    <li>Apple Pay > Add Your merchant ID incase you want to use Apple Pay.</li>
+                                    <br />
+                                    <li>Associated Domains > add applinks of your Domain.</li>
+                                    <br />
+                                    <li>Background Modes > Location updates</li>
+                                    <br />
+                                </ul>
+                            </ol>
+                        </section>
+
+                        <section class="docs-section" id="apk">
+                            <h2 class="section-heading">Generate Release APK</h2>
+                            <ol>
+                                <li>In you android studio, right click on you android module of you flutter project.there is option flutter, click on that inside open in new module.then generate release apk from that new module.</li>
+
+                                <br />
+
+                                <img class="figure-img img-fluid shadow rounded" src="images/apk1.png" alt="SmartKitPro" />
+
+                                <li>
+                                    and if in your android studio if flutter option is disable then go to file option in your android studio inside open then locate your flutter project's android module and open it.now generate relase apk
+                                    from that new module.
+                                </li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/apk2.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/apk3.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>In Build menu there is option generate signed bundle/apk.</li>
+
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/apk4.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                            </ol>
+                        </section>
+                        <!--//section-->
+
+                        <section class="docs-section" id="iosbuild">
+                            <h2 class="section-heading">Steps to Publish iOS App to App Store</h2>
+                            <ol>
+                                <li>
+                                    Open your Project's Runner.xcworkspace file in Xcode, and Add your Team [Your Apple Developer ID] and also Insert GoogleService-Info.plist file [Downloaded From Firebase Project] inside folder named
+                                    Runner.
+                                </li>
+
+                                <br />
+                                <img src="images/ios1.png" alt="eShop" />
+                                <br />
+                                <br />
+
+                                <li>and then Select <b>Any iOS Device (armv7,arm64)</b> as shown in image below.</li>
+                                <br />
+                                <img src="images/ios3.png" alt="eShop" />
+                                <br />
+                                <br />
+
+                                <li>After that Select <b>Archive</b> From Product Menu of Xcode as shown below.</li>
+
+                                <br />
+                                <img src="images/ios4.png" alt="eShop" />
+                                <br />
+                                <br />
+
+                                <li>Once Build / Archive Generated, pop up window will be shown. Validate app First, and After Successfull Validation of App, You Can Distribute App to AppStore.</li>
+
+                                <img src="images/ios5.png" alt="eShop" />
+                                <br />
+                                <br />
+
+                                <li>After SuccessFull Submission of Build File, it will be Reflected to your Apple Developer Account in which we have created app with same Bundle ID.</li>
+                                <a href="https://codewithchris.com/submit-your-app-to-the-app-store/" style="color: red;">Click here for Detailed Help</a>
+                            </ol>
+
+                            <p></p>
+                            <div class="section_bdr"></div>
+                        </section>
+                    </article>
+
+                    <article class="docs-article" id="section-2">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">Design</h1>
+                            <section class="docs-intro">
+                                <p></p>
+                            </section>
+                            <!--//docs-intro-->
+                        </header>
+                        <section class="docs-section" id="dependency">
+                            <h2 class="section-heading">How to Implement Design in your project</h2>
+                            <ol>
+                                <li>
+                                    Suppose you want to implement webview,then go to the webview folder inside that copy file webviewRoute into your project.then add if it has any dependency then add dependency in your pubspec.yaml file
+                                    according to it.
+                                </li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/dependency.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/dependency2.png" alt="SmartKitPro" />
+                            </ol>
+                        </section>
+                        <!--//section-->
+
+                        <section class="docs-section" id="image">
+                            <h2 class="section-heading">How to Add Your Own Images</h2>
+                            <ol>
+                                <li>Go to assets > images ></li>
+                                <br />
+                                <li>Add your images inside this folder</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/image.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+
+                                <li>Add Image to pubspec file inside that there is assets tag put your image here</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/image2.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                            </ol>
+                        </section>
+                        <!--//section-->
+
+                        <section class="docs-section" id="splash">
+                            <h2 class="section-heading">Change Splash Screen</h2>
+                            <ol>
+                                <li>Open Android Studio >Go to android > app > src > main > res > launch_background.xml</li>
+                                <li>
+                                    Here You can change background and logo etc.this is defalut splash screen.if you want full customize then you have to create according to your need your dart file and then redirect main.dart to that
+                                    splash screen as done in this project.<br />
+                                </li>
+                            </ol>
+                            <img class="figure-img img-fluid shadow rounded" src="images/splash.png" alt="SmartKitPro" />
+                        </section>
+
+                        <section class="docs-section" id="loginanimation">
+                            <h2 class="section-heading">Implement Login Animation</h2>
+                            <ol>
+                                <li>Copy login_Animation.dart file to your project path.</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/login.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+
+                                <li>Now open pubspec.yaml file and add dependency for flare flutter.and in assets folder add teddy.flr file and pubspec.yaml file add tag '- assets / ' inside assets tag.</li>
+                                <br />
+
+                                <img class="figure-img img-fluid shadow rounded" src="images/login2.png" alt="SmartKitPro" />
+                                <br />
+                            </ol>
+                        </section>
+                    </article>
+                    <!--//docs-article-->
+
+                    <article class="docs-article" id="section-3">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">Firebase</h1>
+                            <section class="docs-intro">
+                                <p></p>
+                            </section>
+                            <!--//docs-intro-->
+                        </header>
+                        <section class="docs-section" id="create_fcm">
+                            <h2 class="section-heading">Create Firebase Project for Application.</h2>
+                            <li>We need Firebase project for <b>Firebase Phone Login (Firebase OTP), Google Sign-In and Facebook Login, Database etc</b></li>
+                            <li>here is steps for craete project.</li>
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create1.png" /></a><br />
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create2.png" /></a><br />
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create3.png" /></a><br />
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create4.png" /></a><br />
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create5.png" /></a><br />
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create6.png" /></a><br />
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create7.png" /></a><br />
+                            <br />
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create8.png" /></a><br />
+                            <br />
+                            <br />
+                            <h3>IOS</h3>
+                            <li>for ios,perform below step. now click on add app.</li>
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/create9.png" /></a><br />
+                            <br />
+                            <li>and then click on ios button.in this same as android step will be here, you have to enter your appname.then next</li>
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/ios.png" /></a><br />
+                            <br />
+                            <li>on next screen download google service info.plist file.</li>
+                            <a href="#create_fcm"><img class="figure-img img-fluid shadow rounded" src="images/ios2.png" /></a><br />
+                            <br />
+                            <li>now copy the content of that file and replace in ios > Runner > GoogleServie-info.plist</li>
+							
+							<ul><li>now press next next on firebase console and that's it your project is created on ios.</li>
+                            <ul>
+                                <li>Move or copy GoogleService-Info.plist into the [my_project]/ios/Runner directory.</li>
+                                <li>Open Xcode, then right-click on Runner directory and select Add Files to "Runner".</li>
+                                <li>Select GoogleService-Info.plist from the file manager.</li>
+                                <li>A dialog will show up and ask you to select the targets, select the Runner target.</li>
+                            </ul></ul>
+                            <img src="images/fcm10.png" alt="eShop" /><br />
+                            <br />
+                        </section>
+                        <!--//section-->
+
+                        <section class="docs-section" id="realtimedb">
+                            <h2 class="section-heading">Firebase Realtime Database</h2>
+                            <p>Enable Realtime database in firebase console.</p>
+                            <li>Realtime database we used to Read and Write data.</li>
+                            <a href="#realtime"><img class="figure-img img-fluid shadow rounded" src="images/db0.png" /></a><br />
+                            <br />
+                            <a href="#realtime"><img class="figure-img img-fluid shadow rounded" src="images/db.png" /></a><br />
+                            <br />
+                            <li><a style="color: #e2172f;">Realtime database rules must be true like below.because if user dont have read and write permission then they are not able to access database.</a></li>
+                            <br />
+                            <a href="#realtime"><img class="figure-img img-fluid shadow rounded" src="images/db1.png" /></a><br />
+                            <br />
+                            <br />
+                        </section>
+                        <!--//section-->
+
+                        <section class="docs-section" id="emailLogin">
+                            <h2 class="section-heading">Authenticate Using Email and Password on Flutter With Firebase.</h2>
+
+                            <li>Open your project in firebase console.</li>
+                            <li>In the Firebase console, open the Auth section.</li>
+                            <li>On the Sign in method tab, enable the Email/password sign-in method and click Save.</li>
+
+                            <a href="#emailLogin"><img class="figure-img img-fluid shadow rounded" src="images/email_login1.png" /></a><br />
+                            <br />
+                            <a href="#emailLogin"><img class="figure-img img-fluid shadow rounded" src="images/email_login2.png" /></a><br />
+                            <br />
+                            <br />
+                            <li>Change Sender Name and Subject for verify email and reset Password.</li>
+                            <br />
+                            <a href="#emailLogin"><img class="figure-img img-fluid shadow rounded" src="images/sub_1.png" /></a><br />
+                            <br />
+                            <a href="#emailLogin"><img class="figure-img img-fluid shadow rounded" src="images/sub_2.png" /></a><br />
+                            <br />
+                            <br />
+                        </section>
+
+                        <section class="docs-section" id="googleLogin">
+                            <h2 class="section-heading">Authenticate Using Google Sign-In on Flutter With Firebase.</h2>
+
+                            <li>First of all we have to enable <b>Google Sign-In</b> method in firebase console.</li>
+                            <li>Now open your project in firebase console.</li>
+                            <a href="#googleLogin"><img class="figure-img img-fluid shadow rounded" src="images/google_1.png" /></a><br />
+                            <br />
+                            <a href="#googleLogin"><img class="figure-img img-fluid shadow rounded" src="images/google_2.png" /></a><br />
+                            <br />
+
+                            <li>We have to add <b>Authorized domain</b> and <b> Application Privacy Policy link</b> in Google Cloud Plateform.</li>
+                            <li>This step is important without add authorized domain link google signin may not work.</li>
+                            <li>Open your project in Google Cloud Plateform, here is link for <a href="https://console.cloud.google.com/apis/credentials/consent" target="_blank">OAuth consent screen</a></li>
+                            <a href="#googleLogin"><img class="figure-img img-fluid shadow rounded" src="images/google_4.png" /></a><br />
+                            <br />
+                            <li>Add the dependencies for Firebase Authentication and Google Sign-In to your app-level build.gradle file:</li>
+                            <a href="#googleLogin"><img class="figure-img img-fluid shadow rounded" src="images/google_3.png" /></a><br />
+                            <br />
+                            <li>If you haven't yet specified your app's SHA-1 fingerprint, do so from the Settings page of the Firebase console.</li>
+                            <a href="#googleLogin"><img class="figure-img img-fluid shadow rounded" src="images/sha_1.png" /></a><br />
+                            <br />
+                            <a href="#gooleLogin"><img class="figure-img img-fluid shadow rounded" src="images/google_5.png" /></a><br />
+                            <br />
+                            <li>After you integrate Google Sign-In, your LoginActivity has code for login you don't have to add anything extra.</li>
+                            <li>If you want to read code for google sign-in for flutter you can read here.</li>
+                            <li><a href="https://developers.google.com/identity/sign-in/android/sign-in" target="_blank">Steps for Integrating Google Sign-In into Your Flutter App</a></li>
+                            <br />
+                            <br />
+                            <b>Note</b>
+                            <li>There is <b>three</b> types of SHA-1.</li>
+                            <ul>
+                                <li><b>Debug SHA-1 : </b> you can get this sha from your android stuido.</li>
+                                <li>
+                                    <b>Release SHA-1 :</b> when you create keystore(.jks) file for generate sign apk. you can get release sha from your key store file. Use this Desktop App for get release sha from keystore file.
+                                    <a href="https://keystore-explorer.org/" target="_blank">KeyStore Explorer.</a> Add this sha in your firebase project when you test realese apk.
+                                </li>
+                                <li>
+                                    <b>Sign SHA-1:</b>You have to add this sha when you publish your app on playstore. You can get this sign sha from your PlayConsole. Without Sign sha your google login not work when your app published on
+                                    PlayStore.
+                                </li>
+                                <li>For App signing certificate go to > Play Console > Select your App > Release Management > App Signing</li>
+                                <br />
+                                <a href="#gooleLogin"><img class="figure-img img-fluid shadow rounded" src="images/singing.png" /></a>
+                                <br />
+                                <br />
+                            </ul>
+                        </section>
+
+                        <section class="docs-section" id="mobileLogin">
+                            <h2 class="section-heading">Authenticate Using Mobile Number on Flutter With Firebase.</h2>
+
+                            <li>First of all we have to enable <b>Phone Sign-In</b> method in firebase console.</li>
+                            <li>Now open your project in firebase console.</li>
+                            <a href="#mobileLogin"><img class="figure-img img-fluid shadow rounded" src="images/mobile_login.png" /></a><br />
+                            <br />
+                            <a href="#mobileLogin"><img class="figure-img img-fluid shadow rounded" src="images/mobile_login1.png" /></a><br />
+                            <br />
+
+                            <br />
+                        </section>
+
+                        <section class="docs-section" id="facebookLogin">
+                            <h2 class="section-heading">Authenticate Using Facebook Login on Flutter with Firebase.</h2>
+
+                            <ul>
+                                <li>First create project for your application , go to <a href="https://developers.facebook.com/" target="_blank">Facebook for Developers</a></li>
+                                <li>Go to Facebook Quick Start Integrate the Facebook SDK</li>
+                                <li>On the <a href="https://developers.facebook.com/" target="_blank">Facebook for Developers</a> site, get the <b>App ID</b> and an <b>App Secret</b> for your app.</li>
+                                <li>In the <a href="https://console.firebase.google.com/u/0/" target="_blank">Firebase console</a>, open the <b>Auth</b> section. Enable Facebook Login.</li>
+                                <li>On the <b>Sign in method</b> tab, enable the <b>Facebook</b> sign-in method and specify the <b>App ID</b> and <b>App Secret</b> you got from Facebook.</li>
+                                <a href="#facebookLogin"><img class="figure-img img-fluid shadow rounded" src="images/fb0.png" /></a>
+                                <br />
+                                <br />
+
+                                <li>
+                                    Then, make sure your <b>OAuth redirect URI</b> (e.g. my-app-12345.firebaseapp.com/__/auth/handler) is listed as one of your <b>OAuth redirect URIs</b> in your Facebook app's settings page on the
+                                    <a href="https://developers.facebook.com/" target="_blank">Facebook for Developers</a> site in the <b>Product Setting > Facebook Login</b> config
+                                </li>
+
+                                <li>Add the dependencies for Firebase Authentication and Facebook Login SDK to your app-level build.gradle file:</li>
+                                <br />
+                                <a href="#facebookLogin"><img class="figure-img img-fluid shadow rounded" src="images/fb1.png" /></a>
+                                <br />
+                                <br />
+                                <h4>Edit Your Resources and Manifest</h4>
+                                <li>Create strings for your Facebook app ID and for those needed to enable Chrome Custom Tabs. Also, add FacebookActivity to your Android manifest.</li>
+                                <li>Open your app >res >values >strings.xml file.</li>
+
+                                <a href="#facebookLogin"><img class="figure-img img-fluid shadow rounded" src="images/fb3.png" /></a>
+                                <br />
+                                <br />
+
+                                <li>Open the app >manifest >AndroidManifest.xml file.</li>
+                                <li>Add the following meta-data element, an activity for Facebook</li>
+
+                                <a href="#facebookLogin"><img class="figure-img img-fluid shadow rounded" src="images/fb2.png" /></a>
+                                <br />
+                                <br />
+                                <li>Associate Your Package Name and Default Class with Your App</li>
+
+                                <li>Provide the Development and Release Key Hashes for Your App</li>
+                                <li>
+                                    To ensure the authenticity of the interactions between your app and Facebook, you need to supply us with the Flutter key hash for your development environment. If your app has already been published, you
+                                    should add your release key hash too.
+                                </li>
+                                <a href="#facebookLogin"><img class="figure-img img-fluid shadow rounded" src="images/fb5.png" /></a>
+                                <br />
+                                <br />
+                                <b>Generating a Development Key Hash</b>
+                                <ol>
+                                    <li>We will use SHA-1 key to generate hashkey for facebook login.</li>
+                                    <li>you can generate hash online. Here is external link for generate key has for facebook login. <a href="http://tomeko.net/online_tools/hex_to_base64.php" target="_blank">Key hash Generate Link</a></li>
+                                    <br />
+                                    <a href="#facebookLogin"><img class="figure-img img-fluid shadow rounded" src="images/hash_key1.png" /></a>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <a href="#facebookLogin"><img class="figure-img img-fluid shadow rounded" src="images/hash_key2.png" /></a>
+                                    <br />
+                                    <br />
+                                    <br />
+                                </ol>
+                            </ul>
+
+                            <br />
+                        </section>
+
+                        <section class="docs-section" id="deeplinking">
+                            <h2 class="section-heading">Firebase Dynamic Links Setting URL in Firebase Console.</h2>
+
+                            <ul>
+                                <li>Open Firebase console. Open Firebase Project in which you need to add Firebase Dynamic Links.</li>
+                                <li>Configure App (Android, iOS) in your Firebase project.</li>
+                                <li>Dynamic link Section will open up from the Dynamic Links section</li>
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_1.png" /></a>
+                                <br />
+                                <br />
+                                <li>Section will open up the Dynamic Links section</li>
+                                <li>Now Click on Get Started button for creation of URL prefix</li>
+                                <li>
+                                    Create a Dynamic Link Containing Unique Domain Name of your App. For example: firebasedynamiclinks.page.link. Here, the domain name is suffixed with page.link. Then, follow: Configure → Verify → Finish
+                                    steps.
+                                </li>
+                                <li>Then, follow Steps Click Configure → Verify → Finish steps.</li>
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_2.png" /></a>
+                                <br />
+                                <br />
+
+                                <li><b>Create a dynamic link in the console</b></li>
+
+                                <li>Click on the New dynamic links button you will be redirected to some step defined for dynamic links creation</li>
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_12.png" /></a>
+                                <br />
+                                <br />
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_3.png" /></a>
+                                <br />
+                                <br />
+                                <li>Add DeepLink URl and DeepLink NAme then press next button.</li>
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_4.png" /></a>
+                                <br />
+                                <br />
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_5.png" /></a>
+                                <br />
+                                <br />
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_7.png" /></a>
+                                <br />
+                                <br />
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_8.png" /></a>
+                                <br />
+                                <br />
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_9.png" /></a>
+                                <br />
+                                <br />
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_10.png" /></a>
+                                <br />
+                                <br />
+                                <li>Create a Dynamic Link In Programming</li>
+                                <a href="#deeplinking"><img class="figure-img img-fluid shadow rounded" src="images/deeplinking_11.png" /></a>
+                                <br />
+                                <br />
+                            </ul>
+                            <br />
+                        </section>
+                    </article>
+                    <article class="docs-article" id="section-4">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">Google Drive Integration (Upload, Download And List Files).</h1>
+                            <section class="docs-intro">
+                                <p></p>
+                            </section>
+                        </header>
+
+                        <section class="docs-section" id="googledrive">
+                            <ul>
+                                <li>Create Google Firebase Project.</li>
+                                <li>
+                                    Enable Google Drive API from Google Developer Console.<br />
+                                    (<b>Note: you need to select the same project in Google Developer Console as you have created in Google Firebase.</b>)
+                                </li>
+                                <br />
+                                <a href="#googledrive"><img class="figure-img img-fluid shadow rounded" src="images/googledrive.png" /></a>
+                                <br />
+                                <br />
+                            </ul>
+                        </section>
+                    </article>
+
+                    <article class="docs-article" id="section-5">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">How to Add Multi Language in app</h1>
+                            <section class="docs-intro">
+                                <p></p>
+                            </section>
+                        </header>
+
+                        <section class="docs-section" id="language">
+                            <ol>
+                                <li>To Add language First go to <b>SmartKitPro/lib/AppFeature/l10n</b> folder and duplicate app_en.arb file and rename with your language. and replace string with your langauge</li>
+                                <br />
+                                <li>Then Open l10n.dart file.</li>
+                                <br />
+                                <li>Paste <b>const Locale('your language code'),</b> this below const Locale('de')</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/languagestep1.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Then copy code show below image.</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/languagestep2.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>And paste above defalut line. As shown below image</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/languagestep3.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Then Goto your <b> main.dart</b> and wrap your <b>MaterialApp</b> with <b>ChangeNotifierProvider</b> as shown below image</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/languagestep4.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Then add this line shown below image in your <b>MaterialApp</b> widget</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/languagestep5.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                            </ol>
+                        </section>
+                    </article>
+
+                    <article class="docs-article" id="section-6">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">Add Dynamic theme to app</h1>
+                            <section class="docs-intro">
+                                <p></p>
+                            </section>
+                        </header>
+
+                        <section class="docs-section" id="dynamictheme">
+                            <ol>
+                                <li>Copy<b>theme.dart</b> file and paste in your project</li>
+                                <br />
+                                <li>Then open <b>theme.dart</b> and add your <b>themedata</b> as par your requerment. as shown below image.</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/theme1.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Then goto your <b>main.dart</b> and wrap your <b>MaterialApp</b> widget with change <b>ChangeNotifierProvider</b> as shown below image.</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/theme2.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Then add below code in yuor app where you want to add dynamic theme switch</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/theme3.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                            </ol>
+                        </section>
+                    </article>
+
+
+                    <article class="docs-article" id="section-10">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">How to import Full UI Apps Individuals</h1>
+                            <section class="docs-intro">
+                                <p></p>
+                            </section>
+                        </header>
+
+                        <section class="docs-section" id="importproject">
+                            <ol>
+                                <li>Go to lib folder -------> ui -------> fullApps</li>
+                                <br />
+                                <li>Choice your Application and copy that folder.</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/libfolder.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                                <li>Then after past on individual project with <b>>assest folder (for images)</b> and <b>pubspec.ymal (for dependencies)</b> file and your individual project ready.</li>
+                                <br />
+                                <img class="figure-img img-fluid shadow rounded" src="images/indiviualfolder.png" alt="SmartKitPro" />
+                                <br />
+                                <br />
+                            
+                            </ol>
+                        </section>
+                    </article>
+
+                    <article class="docs-article" id="section-7">
+                        <header class="docs-header">
+                            <h1 class="docs-heading">Support</h1>
+                            <section class="docs-intro">
+                                <p></p>
+                            </section>
+                        </header>
+
+                        <section class="docs-section" id="support">
+                            <h2>Need Support ?</h2>
+                            <p>Its our pleasure to serve our service and support. please contact our support team.</p>
+                            <p>
+                                Head of Customer Support : Bharavi Patel,<br />
+                                Skype: <a href="https://join.skype.com/invite/vM85JTUEkGlE" target="_blank" style="color: #3c55d1;"> Bharavi Patel</a>
+                            </p>
+
+                            <p>
+                                To help our customers, we constantly be in touch with every customer if they need any assistance regarding our product. We offer our customers a support from
+                                <strong> Mon &#9472; Fri 9.00am to 6.00pm IST (GMT +5.30) &#9472; We are a Team located in India &#9472; Asia.</strong>
+                            </p>
+
+                            <p>Typically we reply our customers for all the questions and queries within 24 hours of time via comments, support forum or emails.</p>
+                        </section>
+
+                        <section class="docs-section" id="rating">
+                            <h2>Your Feedback</h2>
+                            <p>
+                                Dear valuable customer, Thank you very much for choosing our product. It's our pleasure to serve top-notch service to you. Please give us your honest feedback that will help us to make a more strong and
+                                reliable product by click here <a href="https://codecanyon.net/downloads" style="color: #3c55d1;" target="_blank">Rate Us</a>. Thank you very much.
+                            </p>
+                        </section>
+
+                        <section class="docs-section" id="contactus">
+                            <h2>Contact Us</h2>
+                            <p>
+                                WRTeam has creative and dedicated group of developers who are mastered in Apps Developments and Web Application Development with a niche in delivering quality solutions to customers across the globe. Contact
+                                us today to find out how we can help you or for freelance work.
+                            </p>
+                            <p>
+                                Visit Us : <a href="https://wrteam.in/" target="_blank"><span style="color: #0e8bcb;">https://wrteam.in</span> </a>
+                            </p>
+
+                            <p>Mail Us : info@wrteam.in</p>
+                            <p>Call Us : +91 9033 646589</p>
+                            <p>Skype : <a href="https://join.skype.com/invite/YvVpSKoSbtzD" target="_blank" style="color: #3c55d1;"> Hency Pithadiya</a></p>
+
+                            <p>Mail Us : info@wrteam.in</p>
+
+                            <p>Thank you very much.</p>
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <!--//docs-wrapper-->
+
+        <!-- Javascript -->
+        <script src="assets/plugins/popper.min.js"></script>
+        <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Page Specific JS -->
+        <script src="assets/plugins/smoothscroll.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+        <script src="assets/js/highlight-custom.js"></script>
+        <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+        <script src="assets/js/docs.js"></script>
+    </body>
+</html>
